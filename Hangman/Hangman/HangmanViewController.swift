@@ -9,14 +9,22 @@
 import UIKit
 
 class HangmanViewController: UIViewController {
+    
+    var curPhraseIndex = 0;
+    @IBOutlet weak var phraseLabel: UILabel!
+    
+    let hangmanPhrases = HangmanPhrases()
+    var curPhrase: String! {
+        didSet {
+            self.phraseLabel.text = parseAndDisplay()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let hangmanPhrases = HangmanPhrases()
+
         // Generate a random phrase for the user to guess
-        let phrase: String = hangmanPhrases.getRandomPhrase()
-        print(phrase)
+        self.curPhrase = self.hangmanPhrases.getRandomPhrase()
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,15 +32,33 @@ class HangmanViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    private func parseAndDisplay() -> String {
+        var initLabel = ""
+        let wordArray = self.curPhrase.components(separatedBy: " ")
+        self.phraseLabel.numberOfLines = wordArray.count
+        
+        for word in wordArray {
+            for _ in 0..<word.characters.count {
+                initLabel.append("-")
+            }
+            initLabel.append("\r")
+        }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        return initLabel
     }
-    */
 
+    // MARK: - Alphakeyboard Handling
+    
+    @IBAction func checkLetter(_ sender: AlphaButton) {
+        sender.disableButton()
+    }
+    
+    
+    
+    @IBAction func refresh(_ sender: Any) {
+        self.curPhrase = hangmanPhrases.getNextPhrase(ind: curPhraseIndex)
+        print(self.curPhrase)
+        curPhraseIndex += 1
+    }
 }
