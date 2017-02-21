@@ -26,7 +26,13 @@ class HangmanViewController: UIViewController {
         }
     }
 
-    // var phraseIndex = 0;
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -152,9 +158,6 @@ class HangmanViewController: UIViewController {
 
     /** For UI testing purposes only; removed prior to release */
     @IBAction func refresh(_ sender: Any) {
-        // self.phrase = hangmanPhrases.getNextPhrase(ind: phraseIndex)
-        // print(self.phrase)
-        // phraseIndex += 1
         newGame()
     }
 }

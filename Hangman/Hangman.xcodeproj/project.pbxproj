@@ -10,7 +10,6 @@
 		07193AE11E5BF7FE009E7054 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07193AE01E5BF7FE009E7054 /* GameState.swift */; };
 		07193AE31E5C09DB009E7054 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07193AE21E5C09DB009E7054 /* Constants.swift */; };
 		07720C491E5AC30800DB7A94 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07720C481E5AC30800DB7A94 /* Utils.swift */; };
-		07CF58081E57958200CB6514 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF58071E57958200CB6514 /* RoundButton.swift */; };
 		07CF580A1E57959100CB6514 /* AlphaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF58091E57959100CB6514 /* AlphaButton.swift */; };
 		ECC22F431C89177600749E58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC22F421C89177600749E58 /* AppDelegate.swift */; };
 		ECC22F481C89177600749E58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECC22F461C89177600749E58 /* Main.storyboard */; };
@@ -44,7 +43,6 @@
 		07193AE01E5BF7FE009E7054 /* GameState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		07193AE21E5C09DB009E7054 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		07720C481E5AC30800DB7A94 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		07CF58071E57958200CB6514 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		07CF58091E57959100CB6514 /* AlphaButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlphaButton.swift; path = ../AlphaButton.swift; sourceTree = "<group>"; };
 		ECC22F3F1C89177600749E58 /* Hangman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hangman.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECC22F421C89177600749E58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -92,7 +90,6 @@
 			isa = PBXGroup;
 			children = (
 				07CF58091E57959100CB6514 /* AlphaButton.swift */,
-				07CF58071E57958200CB6514 /* RoundButton.swift */,
 			);
 			name = Designables;
 			sourceTree = "<group>";
@@ -323,7 +320,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				07193AE11E5BF7FE009E7054 /* GameState.swift in Sources */,
-				07CF58081E57958200CB6514 /* RoundButton.swift in Sources */,
 				07CF580A1E57959100CB6514 /* AlphaButton.swift in Sources */,
 				ECC22F711C8917C200749E58 /* HangmanViewController.swift in Sources */,
 				ECC22F431C89177600749E58 /* AppDelegate.swift in Sources */,
