@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		07193AE11E5BF7FE009E7054 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07193AE01E5BF7FE009E7054 /* GameState.swift */; };
+		07193AE31E5C09DB009E7054 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07193AE21E5C09DB009E7054 /* Constants.swift */; };
 		07720C491E5AC30800DB7A94 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07720C481E5AC30800DB7A94 /* Utils.swift */; };
 		07CF58081E57958200CB6514 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF58071E57958200CB6514 /* RoundButton.swift */; };
 		07CF580A1E57959100CB6514 /* AlphaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF58091E57959100CB6514 /* AlphaButton.swift */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		07193AE01E5BF7FE009E7054 /* GameState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
+		07193AE21E5C09DB009E7054 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		07720C481E5AC30800DB7A94 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		07CF58071E57958200CB6514 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		07CF58091E57959100CB6514 /* AlphaButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlphaButton.swift; path = ../AlphaButton.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				07720C481E5AC30800DB7A94 /* Utils.swift */,
 				ECC22F4B1C89177600749E58 /* LaunchScreen.storyboard */,
 				ECC22F4E1C89177600749E58 /* Info.plist */,
+				07193AE21E5C09DB009E7054 /* Constants.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				ECC22F431C89177600749E58 /* AppDelegate.swift in Sources */,
 				ECC22F7E1C891CF800749E58 /* HangmanPhrases.swift in Sources */,
 				07720C491E5AC30800DB7A94 /* Utils.swift in Sources */,
+				07193AE31E5C09DB009E7054 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,7 +17,7 @@ class HangmanPhrases {
         let path = Bundle.main.path(forResource: "phrases", ofType: "plist")
         phrases = NSArray.init(contentsOfFile: path!)
     }
-    
+
     // Get random phrase from all available phrases
     func getRandomPhrase() -> String {
         let index = Int(arc4random_uniform(UInt32(phrases.count)))

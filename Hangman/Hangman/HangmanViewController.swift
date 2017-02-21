@@ -9,25 +9,29 @@
 import UIKit
 
 class HangmanViewController: UIViewController {
-    
-    
+
+
     @IBOutlet weak var phraseLabel: UILabel!
     @IBOutlet var alphaButtons: [AlphaButton]!
 
     let hangmanPhrases = HangmanPhrases()
     var gameState: GameState!
 
+    let gameoverAlert = UIAlertController(title: "Default", message: "", preferredStyle: .alert)
+    
     var dPhrase: String!
     var phrase: String! {
         didSet {
-            self.phraseLabel.text = parsePhrase()
+            self.phraseLabel.text = self.parsePhrase()
         }
     }
-    
+
     // var phraseIndex = 0;
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "chalkboard"))
+        gameoverAlert.addAction(UIAlertAction(title: "New Game", style: .default, handler: {(alert: UIAlertAction!) in self.newGame()}))
         newGame()
     }
 
@@ -35,8 +39,8 @@ class HangmanViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
+
+
     // MARK: - Game Logic Utils
     
     /** Starts a new game by reenabling all buttons in custom keyboard
@@ -48,24 +52,26 @@ class HangmanViewController: UIViewController {
         self.phrase = self.hangmanPhrases.getRandomPhrase()
         self.gameState = GameState(phrase: self.phrase)
     }
-    
+
     /** If the current state is a winning state, show the win popup */
     private func checkForWin() {
         if (self.gameState.isWinState(got: self.dPhrase, expected: self.phrase)) {
-            // Show win popup
-            print("You won fam")
+            gameoverAlert.title = "You've won!"
+            gameoverAlert.message = winMessage
+            self.present(gameoverAlert, animated: true)
         }
     }
-    
+
     /** If the current state is a winning state, show the loss popup */
     private func checkForLoss() {
         if (self.gameState.isLoseState(got: self.dPhrase, expected: self.phrase)) {
-            // Show lose popup
-            print("You lost. Soz")
+            gameoverAlert.title = "You've lost..."
+            gameoverAlert.message = loseMessage
+            self.present(gameoverAlert, animated: true)
         }
     }
-    
-    
+
+
     /** Checks if SELECTED CHAR exists in the given phrase. If so, updates
         the phrase label. If not, updates the hangman image. After update,
         checks to see if the user has guessed the phrase or lost the game. */
@@ -79,8 +85,8 @@ class HangmanViewController: UIViewController {
             checkForLoss()
         }
     }
-    
-    
+
+
     /** Parses the newly generated phrase and replaces all spaces
      with a carriage return */
     private func parsePhrase() -> String {
@@ -98,22 +104,22 @@ class HangmanViewController: UIViewController {
                 initLabel.append("\r")
             }
         }
-        
+
         self.dPhrase = initLabel
         return initLabel
     }
 
-    
+
     // MARK: - Label and Image Updating Utils
-    
-    
+
+
     /** Updates the hangman image appropriately, based on the number of player's
         invalid attempts */
     private func updateHangmanImg() {
         
     }
-    
-    
+
+
     /** Changes all indices that are hiding CHAR to display CHAR */
     private func updateDisplayedPhrase(char: Character) {
         for i in 0..<self.phrase.characters.count {
@@ -125,25 +131,25 @@ class HangmanViewController: UIViewController {
     
         self.phraseLabel.text = self.dPhrase
     }
-    
+
     /** Updates the text displayed in the phrase label by replacing the
         current character at INDEX with CHAR */
     private func updateCharAt(_ index: String.Index, _ char: Character) {
         self.dPhrase.remove(at: index)
         self.dPhrase.insert(char, at: index)
     }
-    
+
 
     // MARK: - Alphakeyboard Handling
-    
-    
+
+
     /** Handles user selection for custom keyboard */
     @IBAction func userSelectedLetter(_ sender: AlphaButton) {
         sender.disableButton()
         checkLetter(selectedChar: sender.getLetter()!)
     }
-    
-    
+
+
     /** For UI testing purposes only; removed prior to release */
     @IBAction func refresh(_ sender: Any) {
         // self.phrase = hangmanPhrases.getNextPhrase(ind: phraseIndex)

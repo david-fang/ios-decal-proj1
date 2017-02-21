@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -30,7 +31,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hangman1" translatesAutoresizingMaskIntoConstraints="NO" id="lkx-yS-I6c">
-                                <rect key="frame" x="20" y="20" width="374" height="291"/>
+                                <rect key="frame" x="20" y="20" width="374" height="294.33333333333331"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="54y-5p-joj">
                                 <rect key="frame" x="3" y="576" width="408" height="152"/>
@@ -38,7 +39,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="neQ-34-hzC" customClass="AlphaButton" customModule="Hangman" customModuleProvider="target">
                                         <rect key="frame" x="8" y="8" width="36.666666666666664" height="40"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
-                                        <state key="normal" title="A"/>
+                                        <state key="normal" title="A">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="userSelectedLetter:" destination="33m-bG-32Y" eventType="touchUpInside" id="vII-oj-3LS"/>
                                         </connections>
@@ -46,7 +49,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qza-qf-sIk" customClass="AlphaButton" customModule="Hangman" customModuleProvider="target">
                                         <rect key="frame" x="52.666666666666657" y="8" width="36.333333333333343" height="40"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
-                                        <state key="normal" title="B"/>
+                                        <state key="normal" title="B">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="userSelectedLetter:" destination="33m-bG-32Y" eventType="touchUpInside" id="O4b-I5-R69"/>
                                         </connections>
@@ -54,7 +59,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="khC-dE-Y22" customClass="AlphaButton" customModule="Hangman" customModuleProvider="target">
                                         <rect key="frame" x="97" y="8" width="36.666666666666657" height="40"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
-                                        <state key="normal" title="C"/>
+                                        <state key="normal" title="C">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="userSelectedLetter:" destination="33m-bG-32Y" eventType="touchUpInside" id="mV9-ea-qjf"/>
                                         </connections>
@@ -62,7 +69,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jpa-xj-b1g" customClass="AlphaButton" customModule="Hangman" customModuleProvider="target">
                                         <rect key="frame" x="141.66666666666666" y="8" width="36" height="40"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
-                                        <state key="normal" title="D"/>
+                                        <state key="normal" title="D">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="userSelectedLetter:" destination="33m-bG-32Y" eventType="touchUpInside" id="ycs-ap-wOe"/>
                                         </connections>
@@ -70,7 +79,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mgt-R9-3be" customClass="AlphaButton" customModule="Hangman" customModuleProvider="target">
                                         <rect key="frame" x="185.66666666666663" y="8" width="37.333333333333343" height="40"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
-                                        <state key="normal" title="E"/>
+                                        <state key="normal" title="E">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="userSelectedLetter:" destination="33m-bG-32Y" eventType="touchUpInside" id="hs4-vs-qXS"/>
                                         </connections>
@@ -78,7 +89,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LYb-bH-Da3" customClass="AlphaButton" customModule="Hangman" customModuleProvider="target">
                                         <rect key="frame" x="231" y="8" width="36" height="40"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
-                                        <state key="normal" title="F"/>
+                                        <state key="normal" title="F">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="userSelectedLetter:" destination="33m-bG-32Y" eventType="touchUpInside" id="rYX-2X-79r"/>
                                         </connections>
@@ -86,7 +99,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S2p-cl-mu3" customClass="AlphaButton" customModule="Hangman" customModuleProvider="target">
                                         <rect key="frame" x="275" y="8" width="36.333333333333314" height="40"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
-                                        <state key="normal" title="G"/>
+                                        <state key="normal" title="G">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="userSelectedLetter:" destination="33m-bG-32Y" eventType="touchUpInside" id="UZV-yE-qDl"/>
                                         </connections>
@@ -94,7 +109,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kfo-ow-pdW" customClass="AlphaButton" customModule="Hangman" customModuleProvider="target">
                                         <rect key="frame" x="319.33333333333331" y="8" width="36" height="40"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
-                                        <state key="normal" title="H"/>
+                                        <state key="normal" title="H">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="userSelectedLetter:" destination="33m-bG-32Y" eventType="touchUpInside" id="gjH-vo-gsl"/>
                                         </connections>
@@ -102,7 +119,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7os-eV-cf8" customClass="AlphaButton" customModule="Hangman" customModuleProvider="target">
                                         <rect key="frame" x="363.33333333333326" y="8" width="36.666666666666686" height="40"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
-                                        <state key="normal" title="I"/>
+                                        <state key="normal" title="I">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="userSelectedLetter:" destination="33m-bG-32Y" eventType="touchUpInside" id="saQ-pm-Flh"/>
                                         </connections>
@@ -110,7 +129,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fcm-lK-fuF" customClass="AlphaButton" customModule="Hangman" customModuleProvider="target">
                                         <rect key="frame" x="8" y="56" width="36.666666666666664" height="40"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
-                                        <state key="normal" title="J"/>
+                                        <state key="normal" title="J">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="userSelectedLetter:" destination="33m-bG-32Y" eventType="touchUpInside" id="2qy-rF-jjz"/>
                                         </connections>
@@ -118,7 +139,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6y2-Bw-fgl" customClass="AlphaButton" customModule="Hangman" customModuleProvider="target">
                                         <rect key="frame" x="52.666666666666657" y="56" width="36.333333333333343" height="40"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
-                                        <state key="normal" title="K"/>
+                                        <state key="normal" title="K">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="userSelectedLetter:" destination="33m-bG-32Y" eventType="touchUpInside" id="370-eP-ag5"/>
                                         </connections>
@@ -126,7 +149,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ha6-t6-Si7" customClass="AlphaButton" customModule="Hangman" customModuleProvider="target">
                                         <rect key="frame" x="97" y="56" width="36.666666666666657" height="40"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
-                                        <state key="normal" title="L"/>
+                                        <state key="normal" title="L">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="userSelectedLetter:" destination="33m-bG-32Y" eventType="touchUpInside" id="y9Z-5f-ZtX"/>
                                         </connections>
@@ -134,7 +159,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="91o-d5-Cm3" customClass="AlphaButton" customModule="Hangman" customModuleProvider="target">
                                         <rect key="frame" x="141.66666666666666" y="56" width="36" height="40"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
-                                        <state key="normal" title="M"/>
+                                        <state key="normal" title="M">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="userSelectedLetter:" destination="33m-bG-32Y" eventType="touchUpInside" id="ucJ-Rv-zWB"/>
                                         </connections>
@@ -142,7 +169,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Md-QQ-0Lt" customClass="AlphaButton" customModule="Hangman" customModuleProvider="target">
                                         <rect key="frame" x="185.66666666666663" y="56" width="37.333333333333343" height="40"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
-                                        <state key="normal" title="N"/>
+                                        <state key="normal" title="N">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="userSelectedLetter:" destination="33m-bG-32Y" eventType="touchUpInside" id="36E-CM-ItV"/>
                                         </connections>
@@ -150,7 +179,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q6z-3W-ytT" customClass="AlphaButton" customModule="Hangman" customModuleProvider="target">
                                         <rect key="frame" x="231" y="56" width="36" height="40"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
-                                        <state key="normal" title="O"/>
+                                        <state key="normal" title="O">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="userSelectedLetter:" destination="33m-bG-32Y" eventType="touchUpInside" id="qWZ-lZ-Pvk"/>
                                         </connections>
@@ -158,7 +189,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A6Z-0f-BAu" customClass="AlphaButton" customModule="Hangman" customModuleProvider="target">
                                         <rect key="frame" x="275" y="56" width="36.333333333333314" height="40"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
-                                        <state key="normal" title="P"/>
+                                        <state key="normal" title="P">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="userSelectedLetter:" destination="33m-bG-32Y" eventType="touchUpInside" id="gxP-5a-gOu"/>
                                         </connections>
@@ -166,7 +199,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DKO-YC-2Rp" customClass="AlphaButton" customModule="Hangman" customModuleProvider="target">
                                         <rect key="frame" x="319.33333333333331" y="56" width="36" height="40"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
-                                        <state key="normal" title="Q"/>
+                                        <state key="normal" title="Q">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="userSelectedLetter:" destination="33m-bG-32Y" eventType="touchUpInside" id="IFg-c7-046"/>
                                         </connections>
@@ -174,7 +209,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNn-77-cwK" customClass="AlphaButton" customModule="Hangman" customModuleProvider="target">
                                         <rect key="frame" x="363.33333333333326" y="56" width="36.666666666666686" height="40"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
-                                        <state key="normal" title="R"/>
+                                        <state key="normal" title="R">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="userSelectedLetter:" destination="33m-bG-32Y" eventType="touchUpInside" id="rCF-nM-XdH"/>
                                         </connections>
@@ -185,7 +222,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pY4-4t-8tA" customClass="AlphaButton" customModule="Hangman" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="36.333333333333314" height="40"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
-                                                <state key="normal" title="V"/>
+                                                <state key="normal" title="V">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="userSelectedLetter:" destination="33m-bG-32Y" eventType="touchUpInside" id="tnF-WM-FsZ"/>
                                                 </connections>
@@ -193,7 +232,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X4l-ls-nkQ" customClass="AlphaButton" customModule="Hangman" customModuleProvider="target">
                                                 <rect key="frame" x="44.333333333333314" y="0.0" width="36" height="40"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
-                                                <state key="normal" title="W"/>
+                                                <state key="normal" title="W">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="userSelectedLetter:" destination="33m-bG-32Y" eventType="touchUpInside" id="hjc-7H-X8v"/>
                                                 </connections>
@@ -215,7 +256,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LPr-Jt-0YK" customClass="AlphaButton" customModule="Hangman" customModuleProvider="target">
                                         <rect key="frame" x="120.33333333333334" y="104" width="36.000000000000028" height="40"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
-                                        <state key="normal" title="U"/>
+                                        <state key="normal" title="U">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="userSelectedLetter:" destination="33m-bG-32Y" eventType="touchUpInside" id="1Cz-tH-CTV"/>
                                         </connections>
@@ -223,7 +266,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0vK-wY-2RN" customClass="AlphaButton" customModule="Hangman" customModuleProvider="target">
                                         <rect key="frame" x="76" y="104" width="36.333333333333329" height="40"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
-                                        <state key="normal" title="T"/>
+                                        <state key="normal" title="T">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="userSelectedLetter:" destination="33m-bG-32Y" eventType="touchUpInside" id="IRS-vY-auF"/>
                                         </connections>
@@ -231,7 +276,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwA-Xy-WHP" customClass="AlphaButton" customModule="Hangman" customModuleProvider="target">
                                         <rect key="frame" x="32" y="104" width="35.666666666666671" height="40"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
-                                        <state key="normal" title="S"/>
+                                        <state key="normal" title="S">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="userSelectedLetter:" destination="33m-bG-32Y" eventType="touchUpInside" id="ABV-M5-U6S"/>
                                         </connections>
@@ -239,7 +286,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ts-TH-0Lm" customClass="AlphaButton" customModule="Hangman" customModuleProvider="target">
                                         <rect key="frame" x="252.66666666666663" y="104" width="36.333333333333371" height="40"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
-                                        <state key="normal" title="X"/>
+                                        <state key="normal" title="X">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="userSelectedLetter:" destination="33m-bG-32Y" eventType="touchUpInside" id="m95-UK-yrz"/>
                                         </connections>
@@ -247,7 +296,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="56k-0D-3cl" customClass="AlphaButton" customModule="Hangman" customModuleProvider="target">
                                         <rect key="frame" x="297" y="104" width="35.666666666666686" height="40"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
-                                        <state key="normal" title="Y"/>
+                                        <state key="normal" title="Y">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="userSelectedLetter:" destination="33m-bG-32Y" eventType="touchUpInside" id="OMQ-78-qUS"/>
                                         </connections>
@@ -255,7 +306,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UyU-Mp-SU2" customClass="AlphaButton" customModule="Hangman" customModuleProvider="target">
                                         <rect key="frame" x="340.66666666666669" y="104" width="36" height="40"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
-                                        <state key="normal" title="Z"/>
+                                        <state key="normal" title="Z">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="userSelectedLetter:" destination="33m-bG-32Y" eventType="touchUpInside" id="0AZ-8Q-873"/>
                                         </connections>
@@ -369,12 +422,13 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---------" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="none" minimumFontSize="20" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OL4-in-CVP" userLabel="Phrase">
                                 <rect key="frame" x="20" y="351" width="374" height="35"/>
                                 <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="35"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="lkx-yS-I6c" firstAttribute="height" secondItem="xKS-yl-l6T" secondAttribute="height" multiplier="2/5" id="9Ee-ho-oz2"/>
                             <constraint firstItem="54y-5p-joj" firstAttribute="leading" secondItem="xKS-yl-l6T" secondAttribute="leading" constant="3" id="C0g-Sc-ylf"/>
                             <constraint firstItem="OL4-in-CVP" firstAttribute="centerX" secondItem="xKS-yl-l6T" secondAttribute="centerX" id="Cjq-dN-Sec"/>
                             <constraint firstAttribute="leadingMargin" secondItem="lkx-yS-I6c" secondAttribute="leading" id="JCG-xL-rbL"/>
@@ -389,6 +443,11 @@
                             <constraint firstItem="OL4-in-CVP" firstAttribute="top" secondItem="lkx-yS-I6c" secondAttribute="bottom" constant="40" id="p1s-y2-Fh9"/>
                             <constraint firstItem="OL4-in-CVP" firstAttribute="leading" secondItem="lkx-yS-I6c" secondAttribute="leading" id="tls-Pj-qyU"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="p1s-y2-Fh9"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="phraseLabel" destination="OL4-in-CVP" id="8Z4-Mn-8uG"/>

@@ -9,7 +9,7 @@
 import Foundation
 
 class GameState {
-    
+
     private var invalidAttempts: Int
     private var phrase: String
     
@@ -17,7 +17,7 @@ class GameState {
         self.invalidAttempts = 0
         self.phrase = phrase
     }
-    
+
     /** Checks to see if the current game state is a win state */
     func isWinState(got displayedPhrase: String, expected phrase: String) -> Bool {
         var rawDisplayedPhrase = ""
@@ -31,20 +31,20 @@ class GameState {
                 rawDisplayedPhrase.append(" ")
             }
         }
-        
+     
         return rawDisplayedPhrase == phrase
     }
-    
+
     /** Checks to see if the current game state is a lose state */
     func isLoseState(got displayedPhrase: String, expected phrase: String) -> Bool {
         return self.invalidAttempts == 7
     }
-    
+
     /** Checks to see if CHAR is a valid character in the phrase */
     func isValidLetter(char: Character) -> Bool {
         return self.phrase.contains("\(char)")
     }
-    
+
     /** Increments the number of user attempts by one */
     func incrementInvalidAttempts() {
         self.invalidAttempts += 1
