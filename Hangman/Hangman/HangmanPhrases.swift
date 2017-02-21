@@ -24,6 +24,7 @@ class HangmanPhrases {
          return phrases.object(at: index) as! String
     }
 
+    // Used primarily for testing
     func getNextPhrase(ind: Int) -> String {
         if ind >= phrases.count {
             return ""

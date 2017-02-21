@@ -15,15 +15,16 @@ class HangmanViewController: UIViewController {
     @IBOutlet var alphaButtons: [AlphaButton]!
 
     let hangmanPhrases = HangmanPhrases()
+    var gameState: GameState!
 
-    var displayedPhrase: String!
-    var curPhrase: String! {
+    var dPhrase: String!
+    var phrase: String! {
         didSet {
             self.phraseLabel.text = parsePhrase()
         }
     }
     
-    // var curPhraseIndex = 0;
+    // var phraseIndex = 0;
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,53 +39,53 @@ class HangmanViewController: UIViewController {
     
     // MARK: - Game Logic Utils
     
+    /** Starts a new game by reenabling all buttons in custom keyboard
+        and creating a new GameState */
     private func newGame() {
         for btn in self.alphaButtons {
             btn.enableButton()
         }
-        self.curPhrase = self.hangmanPhrases.getRandomPhrase()
+        self.phrase = self.hangmanPhrases.getRandomPhrase()
+        self.gameState = GameState(phrase: self.phrase)
     }
     
+    /** If the current state is a winning state, show the win popup */
     private func checkForWin() {
-        var rawDisplayedPhrase = ""
-        let wordArray = self.displayedPhrase.components(separatedBy: "\r")
-        
-        for wordInd in 0..<wordArray.count {
-            let word = wordArray[wordInd]
-            rawDisplayedPhrase.append(word)
-            
-            if (wordInd < wordArray.count - 1) {
-                rawDisplayedPhrase.append(" ")
-            }
-        }
-
-        if (rawDisplayedPhrase == self.curPhrase) {
-            print("You win!")
+        if (self.gameState.isWinState(got: self.dPhrase, expected: self.phrase)) {
+            // Show win popup
+            print("You won fam")
         }
     }
     
-    /** Checks if SELECTEDCHAR exists in the given phrase. If so, updates
+    /** If the current state is a winning state, show the loss popup */
+    private func checkForLoss() {
+        if (self.gameState.isLoseState(got: self.dPhrase, expected: self.phrase)) {
+            // Show lose popup
+            print("You lost. Soz")
+        }
+    }
+    
+    
+    /** Checks if SELECTED CHAR exists in the given phrase. If so, updates
         the phrase label. If not, updates the hangman image. After update,
-        checks to see if the user has guessed the phrase. */
+        checks to see if the user has guessed the phrase or lost the game. */
     private func checkLetter(selectedChar: Character) {
-        for i in 0..<self.curPhrase.characters.count {
-            if self.curPhrase[i] == selectedChar {
-                let index: String.Index = self.curPhrase.index(curPhrase.startIndex, offsetBy: i)
-                updateCharAt(index, selectedChar)
-            }
+        if gameState.isValidLetter(char: selectedChar) {
+            updateDisplayedPhrase(char: selectedChar)
+            checkForWin()
+        } else {
+            self.gameState.incrementInvalidAttempts()
+            updateHangmanImg()
+            checkForLoss()
         }
-        
-        self.phraseLabel.text = self.displayedPhrase
-        checkForWin()
     }
     
-    // MARK: - UI Update Utils
     
     /** Parses the newly generated phrase and replaces all spaces
-        with a carriage return */
+     with a carriage return */
     private func parsePhrase() -> String {
         var initLabel = ""
-        let wordArray = self.curPhrase.components(separatedBy: " ")
+        let wordArray = self.phrase.components(separatedBy: " ")
         self.phraseLabel.numberOfLines = wordArray.count
         
         for wordInd in 0..<wordArray.count {
@@ -97,19 +98,44 @@ class HangmanViewController: UIViewController {
                 initLabel.append("\r")
             }
         }
-
-        self.displayedPhrase = initLabel
+        
+        self.dPhrase = initLabel
         return initLabel
     }
 
+    
+    // MARK: - Label and Image Updating Utils
+    
+    
+    /** Updates the hangman image appropriately, based on the number of player's
+        invalid attempts */
+    private func updateHangmanImg() {
+        
+    }
+    
+    
+    /** Changes all indices that are hiding CHAR to display CHAR */
+    private func updateDisplayedPhrase(char: Character) {
+        for i in 0..<self.phrase.characters.count {
+            if self.phrase[i] == char {
+                let index: String.Index = self.phrase.index(phrase.startIndex, offsetBy: i)
+                updateCharAt(index, char)
+            }
+        }
+    
+        self.phraseLabel.text = self.dPhrase
+    }
+    
     /** Updates the text displayed in the phrase label by replacing the
         current character at INDEX with CHAR */
     private func updateCharAt(_ index: String.Index, _ char: Character) {
-        self.displayedPhrase.remove(at: index)
-        self.displayedPhrase.insert(char, at: index)
+        self.dPhrase.remove(at: index)
+        self.dPhrase.insert(char, at: index)
     }
+    
 
     // MARK: - Alphakeyboard Handling
+    
     
     /** Handles user selection for custom keyboard */
     @IBAction func userSelectedLetter(_ sender: AlphaButton) {
@@ -117,11 +143,15 @@ class HangmanViewController: UIViewController {
         checkLetter(selectedChar: sender.getLetter()!)
     }
     
+    
     /** For UI testing purposes only; removed prior to release */
     @IBAction func refresh(_ sender: Any) {
-        // self.curPhrase = hangmanPhrases.getNextPhrase(ind: curPhraseIndex)
-        // print(self.curPhrase)
-        // curPhraseIndex += 1
+        // self.phrase = hangmanPhrases.getNextPhrase(ind: phraseIndex)
+        // print(self.phrase)
+        // phraseIndex += 1
         newGame()
     }
 }
+
+
+
