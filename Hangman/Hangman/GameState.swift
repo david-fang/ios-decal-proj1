@@ -10,8 +10,8 @@ import Foundation
 
 class GameState {
 
-    private var invalidAttempts: Int
-    private var phrase: String
+    var invalidAttempts: Int
+    var phrase: String
     
     init(phrase: String) {
         self.invalidAttempts = 0
@@ -37,7 +37,7 @@ class GameState {
 
     /** Checks to see if the current game state is a lose state */
     func isLoseState(got displayedPhrase: String, expected phrase: String) -> Bool {
-        return self.invalidAttempts == 7
+        return self.invalidAttempts == 6
     }
 
     /** Checks to see if CHAR is a valid character in the phrase */

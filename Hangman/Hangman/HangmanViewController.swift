@@ -11,8 +11,10 @@ import UIKit
 class HangmanViewController: UIViewController {
 
 
+    @IBOutlet weak var hangmanImgView: UIImageView!
     @IBOutlet weak var phraseLabel: UILabel!
     @IBOutlet var alphaButtons: [AlphaButton]!
+    
 
     let hangmanPhrases = HangmanPhrases()
     var gameState: GameState!
@@ -55,6 +57,9 @@ class HangmanViewController: UIViewController {
         for btn in self.alphaButtons {
             btn.enableButton()
         }
+        
+        hangmanImgView.image = #imageLiteral(resourceName: "hangman1")
+        
         self.phrase = self.hangmanPhrases.getRandomPhrase()
         self.gameState = GameState(phrase: self.phrase)
     }
@@ -122,7 +127,24 @@ class HangmanViewController: UIViewController {
     /** Updates the hangman image appropriately, based on the number of player's
         invalid attempts */
     private func updateHangmanImg() {
-        
+        switch gameState.invalidAttempts {
+        case 0:
+            hangmanImgView.image = #imageLiteral(resourceName: "hangman1")
+        case 1:
+            hangmanImgView.image = #imageLiteral(resourceName: "hangman2")
+        case 2:
+            hangmanImgView.image = #imageLiteral(resourceName: "hangman3")
+        case 3:
+            hangmanImgView.image = #imageLiteral(resourceName: "hangman4")
+        case 4:
+            hangmanImgView.image = #imageLiteral(resourceName: "hangman5")
+        case 5:
+            hangmanImgView.image = #imageLiteral(resourceName: "hangman6")
+        case 6:
+            hangmanImgView.image = #imageLiteral(resourceName: "hangman7")
+        default:
+            print("ERROR: Invalid attempts went over 6")
+        }
     }
 
 
