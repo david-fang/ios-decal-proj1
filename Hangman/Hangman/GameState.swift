@@ -6,7 +6,7 @@
 //  Copyright © 2017 Shawn D'Souza. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class GameState {
 
@@ -48,6 +48,28 @@ class GameState {
     /** Increments the number of user attempts by one */
     func incrementInvalidAttempts() {
         self.invalidAttempts += 1
+    }
+    
+    func getHangmanImg() -> UIImage? {
+        switch invalidAttempts {
+        case 0:
+            return #imageLiteral(resourceName: "hangman1")
+        case 1:
+            return #imageLiteral(resourceName: "hangman2")
+        case 2:
+            return #imageLiteral(resourceName: "hangman3")
+        case 3:
+            return #imageLiteral(resourceName: "hangman4")
+        case 4:
+            return #imageLiteral(resourceName: "hangman5")
+        case 5:
+            return #imageLiteral(resourceName: "hangman6")
+        case 6:
+            return #imageLiteral(resourceName: "hangman7")
+        default:
+            print("Error: More than six invalid attempts were made")
+            return nil
+        }
     }
 }
 

@@ -40,6 +40,7 @@ class HangmanViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "chalkboard"))
         gameoverAlert.addAction(UIAlertAction(title: "New Game", style: .default, handler: {(alert: UIAlertAction!) in self.newGame()}))
+
         newGame()
     }
 
@@ -127,26 +128,8 @@ class HangmanViewController: UIViewController {
     /** Updates the hangman image appropriately, based on the number of player's
         invalid attempts */
     private func updateHangmanImg() {
-        switch gameState.invalidAttempts {
-        case 0:
-            hangmanImgView.image = #imageLiteral(resourceName: "hangman1")
-        case 1:
-            hangmanImgView.image = #imageLiteral(resourceName: "hangman2")
-        case 2:
-            hangmanImgView.image = #imageLiteral(resourceName: "hangman3")
-        case 3:
-            hangmanImgView.image = #imageLiteral(resourceName: "hangman4")
-        case 4:
-            hangmanImgView.image = #imageLiteral(resourceName: "hangman5")
-        case 5:
-            hangmanImgView.image = #imageLiteral(resourceName: "hangman6")
-        case 6:
-            hangmanImgView.image = #imageLiteral(resourceName: "hangman7")
-        default:
-            print("ERROR: Invalid attempts went over 6")
-        }
+        hangmanImgView.image = gameState.getHangmanImg()!
     }
-
 
     /** Changes all indices that are hiding CHAR to display CHAR */
     private func updateDisplayedPhrase(char: Character) {
